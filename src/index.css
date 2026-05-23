@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-brand: #FF6B35;
+  --color-coin: #F5A623;
+}
