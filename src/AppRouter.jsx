@@ -28,7 +28,7 @@ export default function AppRouter() {
       <Route path={ROUTES.MY_ORDERS}             element={<ProtectedRoute><MyOrdersPage /></ProtectedRoute>} />
       <Route path={ROUTES.CART}             element={<ProtectedRoute><CartPage /></ProtectedRoute>} />
       <Route path={ROUTES.VIRTUAL_TRIAL}    element={<ProtectedRoute><VirtualTrialPage /></ProtectedRoute>} />
-      <Route path={ROUTES.PAYMENT}          element={<ProtectedRoute><PaymentPage /></ProtectedRoute>} />
+<Route path={ROUTES.PAYMENT} element={<PaymentPage />} />
       <Route path={ROUTES.ORDER_CONFIRMED}  element={<ProtectedRoute><OrderConfirmedPage /></ProtectedRoute>} />
       <Route path={ROUTES.SELL_HOME}        element={<ProtectedRoute><SellHomePage /></ProtectedRoute>} />
       <Route path={ROUTES.LIST_CLOTHES}     element={<ProtectedRoute><ListClothesPage /></ProtectedRoute>} />
