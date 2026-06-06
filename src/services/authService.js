@@ -1,15 +1,25 @@
 import axiosInstance from './axiosInstance'
 
 export const registerUser = async (formData) => {
-  const { data } = await axiosInstance.post('/auth/register', formData);
-  console.log('LOGIN RESPONSE:', data)
-  return data
+  try {
+    const { data } = await axiosInstance.post('/auth/register', formData);
+    console.log('REGISTER RESPONSE:', data)
+    return data
+  } catch (error) {
+    // Re-throw with more context
+    throw error
+  }
   // backend sets access token cookie automatically on response
 }
 
 export const loginUser = async (formData) => {
-  const { data } = await axiosInstance.post('/auth/login', formData)
-  return data
+  try {
+    const { data } = await axiosInstance.post('/auth/login', formData)
+    return data
+  } catch (error) {
+    // Re-throw with more context
+    throw error
+  }
   // backend sets access token cookie automatically on response
 }
 

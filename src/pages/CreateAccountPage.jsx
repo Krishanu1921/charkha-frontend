@@ -50,7 +50,18 @@ export default function CreateAccountPage() {
       }
       navigate('/home', { replace: true })
     } catch (err) {
-      toast.error(err?.response?.data?.message || 'Something went wrong')
+      const errorMessage = err?.response?.data?.message || 
+                          err?.message || 
+                          'Something went wrong. Please try again.'
+      
+      // Check for network errors
+      if (err?.message?.includes('Network Error') || 
+          err?.code === 'ERR_NETWORK' ||
+          err?.message?.includes('ERR_CONNECTION_REFUSED')) {
+        toast.error('Cannot connect to server. Please check your internet connection.')
+      } else {
+        toast.error(errorMessage)
+      }
     } finally {
       setLoading(false)
     }
